@@ -1,0 +1,9 @@
+relationship AutoDetected_75bdbaca-59d0-4d63-a0f7-e38c315aaab1
+	fromColumn: Medalhistas.country_code
+	toColumn: 'Medalhas total'.country_code
+
+relationship a88ef09f-163f-4b38-83cc-c1fd487534a1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Cômite Paralímpico Brasileiro'.data_nascimento
+	toColumn: LocalDateTable_4a11cbf9-948f-4bff-a10e-539dfa054196.Date
+

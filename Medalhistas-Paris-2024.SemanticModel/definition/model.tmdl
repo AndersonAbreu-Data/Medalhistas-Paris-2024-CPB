@@ -10,5 +10,13 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["Medalhas total","Medalhistas","Cômite Paralímpico Brasileiro"]
+
+ref table 'Medalhas total'
+ref table Medalhistas
+ref table 'Cômite Paralímpico Brasileiro'
+ref table DateTableTemplate_fbab0123-b7f6-4acc-a274-bcf90856d264
+ref table LocalDateTable_4a11cbf9-948f-4bff-a10e-539dfa054196
+
 ref cultureInfo pt-BR
 

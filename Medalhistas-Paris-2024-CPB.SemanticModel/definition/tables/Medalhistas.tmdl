@@ -1,0 +1,87 @@
+table Medalhistas
+	lineageTag: 0f49f1a8-14c2-49a5-aa7b-2eb948577c69
+
+	column medal_type
+		dataType: string
+		lineageTag: f0265e6f-01d2-4acd-97ba-187120d8c79b
+		summarizeBy: none
+		sourceColumn: medal_type
+		sortByColumn: medal_code
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column medal_code
+		dataType: int64
+		formatString: 0
+		lineageTag: fa4f6360-fe7a-4f34-a845-e70b6549aa0b
+		summarizeBy: sum
+		sourceColumn: medal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 4b21de60-c0c4-446d-b669-822b55a1a348
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: e0117c80-cdcc-4ec4-a987-e0947307a115
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: 41e4b84b-f0b3-4756-a9fb-dceeb4b797a7
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 5b09c717-082c-42ee-a327-8a33ace57997
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column discipline
+		dataType: string
+		lineageTag: 1b2bd12f-c865-4c9b-bdfc-7891ff6f93c7
+		summarizeBy: none
+		sourceColumn: discipline
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_athlete
+		dataType: int64
+		formatString: 0
+		lineageTag: 1983f498-e177-4760-bb33-9a1e6c7026b8
+		summarizeBy: sum
+		sourceColumn: code_athlete
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medalhistas = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\ander\OneDrive\Área de Trabalho\ProjetoOli\medalhistas.xlsx"), null, true),
+				    Tabela1_Table = Fonte{[Item="Tabela1",Kind="Table"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Tabela1_Table,{{"medal_date", type date}, {"medal_type", type text}, {"medal_code", Int64.Type}, {"name", type text}, {"gender", type text}, {"country_code", type text}, {"country", type text}, {"country_long", type text}, {"nationality_code", type text}, {"nationality", type text}, {"nationality_long", type text}, {"discipline", type text}, {"event", type text}, {"event_type", type text}, {"birth_date", type date}, {"code_athlete", Int64.Type}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"country_long", "nationality_long", "event", "event_type", "birth_date", "medal_date", "nationality_code", "nationality"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

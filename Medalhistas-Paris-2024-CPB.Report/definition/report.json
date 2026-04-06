@@ -1,0 +1,126 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.1.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY25SU12",
+      "reportVersionAtImport": {
+        "visual": "2.5.0",
+        "report": "3.1.0",
+        "page": "2.3.0"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY25SU12",
+          "path": "BaseThemes/CY25SU12.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Medalhistas_Brasileiros_nas_Pa05877341724388563.png",
+          "path": "Medalhistas_Brasileiros_nas_Pa05877341724388563.png",
+          "type": "Image"
+        },
+        {
+          "name": "CPBfundo30982746824543188.jpg",
+          "path": "CPBfundo30982746824543188.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "CPBfundo340771519727300587.jpg",
+          "path": "CPBfundo340771519727300587.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "CPBfundo38316606839731739.jpg",
+          "path": "CPBfundo38316606839731739.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "MEDALHAouro10620231502795197.png",
+          "path": "MEDALHAouro10620231502795197.png",
+          "type": "Image"
+        },
+        {
+          "name": "medalhaPrata26789483691441784.png",
+          "path": "medalhaPrata26789483691441784.png",
+          "type": "Image"
+        },
+        {
+          "name": "medalhaBronze4635346525394316.png",
+          "path": "medalhaBronze4635346525394316.png",
+          "type": "Image"
+        },
+        {
+          "name": "trofeu8409979163109773.png",
+          "path": "trofeu8409979163109773.png",
+          "type": "Image"
+        },
+        {
+          "name": "Logo_do_Comit__Paral_mpico_Bra36393226098695675.png",
+          "path": "Logo_do_Comit__Paral_mpico_Bra36393226098695675.png",
+          "type": "Image"
+        },
+        {
+          "name": "HOMElogo3662936686842386.png",
+          "path": "HOMElogo3662936686842386.png",
+          "type": "Image"
+        },
+        {
+          "name": "MEDALHAouro2289265391667168.png",
+          "path": "MEDALHAouro2289265391667168.png",
+          "type": "Image"
+        },
+        {
+          "name": "medalhaPrata39554714314197936.png",
+          "path": "medalhaPrata39554714314197936.png",
+          "type": "Image"
+        },
+        {
+          "name": "medalhaBronze6952271214421931.png",
+          "path": "medalhaBronze6952271214421931.png",
+          "type": "Image"
+        },
+        {
+          "name": "para-bienvenue015784651300798425.png",
+          "path": "para-bienvenue015784651300798425.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

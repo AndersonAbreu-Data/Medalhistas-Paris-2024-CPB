@@ -1,0 +1,290 @@
+table 'Cômite Paralímpico Brasileiro'
+	lineageTag: ec3e9c9b-3fec-4cd0-a669-e209569b71a3
+
+	measure 'Altura do atleta' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[altura]),
+			    " "
+			)
+		lineageTag: 905704e5-0f5b-493e-8bff-1665359c4051
+
+	measure 'Biografia do atleta' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[biografia]),
+			    "Selecione um atleta"
+			)
+		lineageTag: 13d8e09b-f8f6-4eb3-a1f5-82abdf25e535
+
+	measure 'Classe atletas' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[classe]),
+			    " "
+			)
+		lineageTag: 5ff9ef96-132f-4fd8-8fe7-dd7edf5af4b3
+
+	measure 'Foto do Atleta' = ```
+			
+			IF(
+			    ISFILTERED('Cômite Paralímpico Brasileiro'[nome]), 
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[url_imagem]), 
+			    BLANK()
+			)
+			```
+		lineageTag: 7ebbf926-3a21-4f84-8edb-d7538cd20ead
+		dataCategory: ImageUrl
+
+	measure 'Idade atletas' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[Idade]),
+			    " "
+			)
+		lineageTag: 3c2ce2a3-359a-4d7c-855a-4150cd89acf5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Local de nascimento' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[local_nascimento]),
+			    " "
+			)
+		lineageTag: afd3792d-d5a3-4b6d-b779-02f0588e3474
+
+	measure 'Data de Nascimento Atletas' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[data_nascimento]),
+			    " "
+			)
+		lineageTag: c785ab7d-2faa-4a15-b4b6-2d2ad8680f3c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Peso do atleta' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[peso]),
+			    " "
+			)
+		lineageTag: f78cb77f-8dff-40ca-a49a-a0e52a8820ce
+
+	measure 'Medalhas Ouro' =
+			
+			CALCULATE(
+			     COUNTROWS('Cômite Paralímpico Brasileiro'),'Cômite Paralímpico Brasileiro'[medalha_tipo]="Ouro"
+			) + 0
+		formatString: 0
+		lineageTag: 74db75e8-4f01-4f7a-a9a0-30a7be319799
+
+	measure 'Medalhas Prata' =
+			
+			CALCULATE(
+			    COUNTROWS('Cômite Paralímpico Brasileiro'),'Cômite Paralímpico Brasileiro'[medalha_tipo] = "Prata"
+			) + 0
+		formatString: 0
+		lineageTag: beb0760f-06d1-4f02-92f6-3d8994a7b504
+
+	measure 'Medalhas Bronze' =
+			
+			CALCULATE(
+			    COUNTROWS('Cômite Paralímpico Brasileiro'),'Cômite Paralímpico Brasileiro'[medalha_tipo] = "Bronze"
+			) + 0
+		formatString: 0
+		lineageTag: bf12f96c-48a7-4c04-87ff-da0b2c232209
+
+	column code_athlete
+		dataType: int64
+		formatString: 0
+		lineageTag: cf969590-68f7-4eae-a91f-1d73c40054c6
+		summarizeBy: sum
+		sourceColumn: code_athlete
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome
+		dataType: string
+		lineageTag: 26f405f9-2a9b-4193-af0e-b991d8e95faa
+		summarizeBy: none
+		sourceColumn: nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column sexo
+		dataType: string
+		lineageTag: cbba96f9-7fda-451e-9121-93527574af7f
+		summarizeBy: none
+		sourceColumn: sexo
+
+		annotation SummarizationSetBy = Automatic
+
+	column classe
+		dataType: string
+		lineageTag: 518f7ad7-dc63-4b49-9ffb-d7148c066f57
+		summarizeBy: none
+		sourceColumn: classe
+
+		annotation SummarizationSetBy = Automatic
+
+	column modalidade
+		dataType: string
+		lineageTag: b0f0b7d7-2e33-4cec-8e26-4ad1802abce1
+		summarizeBy: none
+		sourceColumn: modalidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_modal
+		dataType: string
+		lineageTag: b97e4dec-e453-4d71-9de2-ec1ff248c16b
+		summarizeBy: none
+		sourceColumn: tipo_modal
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_nascimento
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 45a45dc3-807c-4663-a332-1a8ac22155ac
+		summarizeBy: none
+		sourceColumn: data_nascimento
+
+		variation Variation
+			isDefault
+			relationship: a88ef09f-163f-4b38-83cc-c1fd487534a1
+			defaultHierarchy: LocalDateTable_4a11cbf9-948f-4bff-a10e-539dfa054196.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column idade
+		dataType: int64
+		formatString: 0
+		lineageTag: 59ae2da7-66ad-4655-8b4a-eb58c3520a0a
+		summarizeBy: sum
+		sourceColumn: idade
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Cômite Paralímpico Brasileiro","TableItemName":"idade (compartimentos)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column peso
+		dataType: string
+		lineageTag: 7dac242d-c0e6-4a55-84df-72bd6e168dde
+		summarizeBy: none
+		sourceColumn: peso
+
+		annotation SummarizationSetBy = Automatic
+
+	column altura
+		dataType: string
+		lineageTag: 082b6917-3aff-4324-bf3f-249a0a9bb07e
+		summarizeBy: none
+		sourceColumn: altura
+
+		annotation SummarizationSetBy = Automatic
+
+	column local_nascimento
+		dataType: string
+		lineageTag: cba70753-5421-41f7-8f9e-0ad20f6fad61
+		summarizeBy: none
+		sourceColumn: local_nascimento
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: 998a5b7f-dab4-4719-b1d1-8d432e9e42b9
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column biografia
+		dataType: string
+		lineageTag: 07611a35-90b7-416f-b8f1-fc3982874d0a
+		summarizeBy: none
+		sourceColumn: biografia
+
+		annotation SummarizationSetBy = Automatic
+
+	column medalha_tipo
+		dataType: string
+		lineageTag: a0ba2464-6ea9-4b43-86c8-f653cda33220
+		summarizeBy: none
+		sourceColumn: medalha_tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column url_imagem
+		dataType: string
+		lineageTag: 613e2e1e-7be7-44cc-8d6d-386db10e9c67
+		summarizeBy: none
+		sourceColumn: url_imagem
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'idade (compartimentos)' =
+			IF(
+				ISBLANK('Cômite Paralímpico Brasileiro'[idade]),
+				BLANK(),
+				INT('Cômite Paralímpico Brasileiro'[idade] / 5) * 5
+			)
+		formatString: 0
+		lineageTag: d12789a4-6004-4a6d-a2ff-823d3a24b66e
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Cômite Paralímpico Brasileiro"
+				          }
+				        },
+				        "Property": "idade"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 5.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"c","Entity":"Cômite Paralímpico Brasileiro"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"idade"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"idade"}},"Size":5.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cômite Paralímpico Brasileiro' = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\ander\OneDrive\Área de Trabalho\ProjetoOli\AtletasCPB.xlsx"), null, true),
+				    #"Cômite Paralímpico Brasileiro_Sheet" = Fonte{[Item="Cômite Paralímpico Brasileiro",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Cômite Paralímpico Brasileiro_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"code_athlete", Int64.Type}, {"nome", type text}, {"sexo", type text}, {"classe", type any}, {"modalidade", type text}, {"tipo_modal", type text}, {"data_nascimento", type date}, {"idade", Int64.Type}, {"peso", type text}, {"altura", type text}, {"local_nascimento", type text}, {"estado", type text}, {"biografia", type text}, {"principais_conquistas", type text}, {"medalha_tipo", type text}, {"url_imagem", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"principais_conquistas"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

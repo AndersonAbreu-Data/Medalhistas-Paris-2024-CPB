@@ -1,0 +1,71 @@
+table 'Medalhas total'
+	lineageTag: 5e3399a2-bcf6-419d-9d52-de4e34aa3dc6
+
+	column country_code
+		dataType: string
+		lineageTag: 1c4c58e0-024f-413c-8a53-bec1921e5edb
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 9558ad03-cb4c-4b01-9089-f1b7644e521c
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gold Medal'
+		dataType: int64
+		formatString: 0
+		lineageTag: 80b17335-8b43-4ab4-8b09-b19bf54ce6ed
+		summarizeBy: none
+		sourceColumn: Gold Medal
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Silver Medal'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b5af148-21e4-4340-b0b5-56a2421cce6b
+		summarizeBy: none
+		sourceColumn: Silver Medal
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bronze Medal'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bec37cc-a471-4d71-9266-751faeaeab32
+		summarizeBy: none
+		sourceColumn: Bronze Medal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total
+		dataType: int64
+		formatString: 0
+		lineageTag: 89e8d16e-d12f-438c-84ad-65926590dac9
+		summarizeBy: none
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Medalhas total' = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\ander\OneDrive\Área de Trabalho\ProjetoOli\MedalhasPorPaís.xlsx"), null, true),
+				    medals_total_Sheet = Fonte{[Item="medals_total",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(medals_total_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"country_code", type text}, {"country", type text}, {"country_long", type text}, {"Gold Medal", Int64.Type}, {"Silver Medal", Int64.Type}, {"Bronze Medal", Int64.Type}, {"Total", Int64.Type}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"country_long"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

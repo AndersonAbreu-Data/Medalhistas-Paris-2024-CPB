@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "16aa65a0fbf5b934739c",
   "position": {
-    "x": 141.03343465045594,
-    "y": 28.206686930091188,
+    "x": 143.95136778115503,
+    "y": 24.316109422492403,
     "z": 0,
     "height": 62.249240121580549,
     "width": 264.55927051671733,
@@ -139,5 +139,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fcbb2ee8562038fe39c7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medalhas total"
+                  }
+                },
+                "Property": "Gold Medal"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

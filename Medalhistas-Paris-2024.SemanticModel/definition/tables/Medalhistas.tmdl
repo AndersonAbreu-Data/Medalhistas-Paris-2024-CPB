@@ -6,6 +6,9 @@ table Medalhistas
 		lineageTag: f0265e6f-01d2-4acd-97ba-187120d8c79b
 		summarizeBy: none
 		sourceColumn: medal_type
+		sortByColumn: medal_code
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 

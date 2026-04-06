@@ -4,10 +4,10 @@
   "position": {
     "x": 979.452887537994,
     "y": 465.89665653495445,
-    "z": 1014,
+    "z": 15000,
     "height": 56.413373860182375,
     "width": 253.86018237082067,
-    "tabOrder": 1014
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "card",
@@ -198,23 +198,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "893451e612825b71e1e6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "Classe atletas"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

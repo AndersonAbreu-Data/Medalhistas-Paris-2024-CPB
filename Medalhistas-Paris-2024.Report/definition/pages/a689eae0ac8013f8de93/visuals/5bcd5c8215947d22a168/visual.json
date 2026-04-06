@@ -4,10 +4,10 @@
   "position": {
     "x": 967.78115501519756,
     "y": 382.24924012158056,
-    "z": 1012,
+    "z": 13000,
     "height": 54.468085106382979,
     "width": 150.75987841945289,
-    "tabOrder": 1012
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "card",
@@ -197,23 +197,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "11afe3920ed320a80f49",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "Peso do atleta"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

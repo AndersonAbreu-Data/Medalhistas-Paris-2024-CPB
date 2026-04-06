@@ -4,10 +4,10 @@
   "position": {
     "x": 1163.2826747720364,
     "y": 298.60182370820672,
-    "z": 1011,
+    "z": 12000,
     "height": 67.112462006079028,
     "width": 75.866261398176292,
-    "tabOrder": 1011
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "multiRowCard",
@@ -255,23 +255,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1b4db59f5c693475503d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "Idade atletas"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

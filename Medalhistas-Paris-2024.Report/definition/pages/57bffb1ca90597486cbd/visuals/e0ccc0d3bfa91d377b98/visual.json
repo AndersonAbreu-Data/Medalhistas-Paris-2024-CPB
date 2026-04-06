@@ -4,10 +4,10 @@
   "position": {
     "x": 437.7173252279635,
     "y": 26.261398176291795,
-    "z": 11003,
+    "z": 14000,
     "height": 277.20364741641339,
     "width": 808.26747720364745,
-    "tabOrder": 11003
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "barChart",
@@ -963,63 +963,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "6c3b6c857710e3105b53",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medalhas total"
-                  }
-                },
-                "Property": "Gold Medal"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "00d6e188ab1c29de4924",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medalhas total"
-                  }
-                },
-                "Property": "Silver Medal"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "01c3897d5ea78f6e4c98",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medalhas total"
-                  }
-                },
-                "Property": "Bronze Medal"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

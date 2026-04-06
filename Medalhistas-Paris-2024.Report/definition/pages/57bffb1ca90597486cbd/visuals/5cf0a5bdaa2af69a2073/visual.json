@@ -4,10 +4,10 @@
   "position": {
     "x": 437.7173252279635,
     "y": 319.02735562310033,
-    "z": 11004,
+    "z": 15000,
     "height": 372.52279635258361,
     "width": 808.26747720364745,
-    "tabOrder": 11004
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "hundredPercentStackedBarChart",
@@ -881,53 +881,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "6ec0565eff3f4efbab46",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medalhistas"
-              }
-            },
-            "Property": "discipline"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "1bc58f828109e2fc65ea",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medalhistas"
-                  }
-                },
-                "Property": "country"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "15b0076a7c09b755549f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medalhistas"
-              }
-            },
-            "Property": "medal_type"
-          }
-        },
-        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"

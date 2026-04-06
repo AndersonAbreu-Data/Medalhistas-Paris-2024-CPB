@@ -79,6 +79,30 @@ table 'Cômite Paralímpico Brasileiro'
 			)
 		lineageTag: f78cb77f-8dff-40ca-a49a-a0e52a8820ce
 
+	measure 'Medalhas Ouro' =
+			
+			CALCULATE(
+			     COUNTROWS('Cômite Paralímpico Brasileiro'),'Cômite Paralímpico Brasileiro'[medalha_tipo]="Ouro"
+			) + 0
+		formatString: 0
+		lineageTag: 74db75e8-4f01-4f7a-a9a0-30a7be319799
+
+	measure 'Medalhas Prata' =
+			
+			CALCULATE(
+			    COUNTROWS('Cômite Paralímpico Brasileiro'),'Cômite Paralímpico Brasileiro'[medalha_tipo] = "Prata"
+			) + 0
+		formatString: 0
+		lineageTag: beb0760f-06d1-4f02-92f6-3d8994a7b504
+
+	measure 'Medalhas Bronze' =
+			
+			CALCULATE(
+			    COUNTROWS('Cômite Paralímpico Brasileiro'),'Cômite Paralímpico Brasileiro'[medalha_tipo] = "Bronze"
+			) + 0
+		formatString: 0
+		lineageTag: bf12f96c-48a7-4c04-87ff-da0b2c232209
+
 	column code_athlete
 		dataType: int64
 		formatString: 0

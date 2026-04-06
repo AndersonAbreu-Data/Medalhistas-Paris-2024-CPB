@@ -4,13 +4,53 @@
   "position": {
     "x": 1001.823708206687,
     "y": 600.12158054711244,
-    "z": 1018,
+    "z": 19000,
     "height": 82.674772036474167,
     "width": 71.975683890577514,
-    "tabOrder": 1018
+    "tabOrder": 19000
   },
   "visual": {
     "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cômite Paralímpico Brasileiro"
+                    }
+                  },
+                  "Property": "Medalhas Ouro"
+                }
+              },
+              "queryRef": "Cômite Paralímpico Brasileiro.Medalhas Ouro",
+              "nativeQueryRef": "Medalhas Ouro"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Cômite Paralímpico Brasileiro"
+                  }
+                },
+                "Property": "Medalhas Ouro"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
     "objects": {
       "categoryLabels": [
         {

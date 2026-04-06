@@ -3,14 +3,36 @@
   "name": "809f5084ceb03c10d6ce",
   "position": {
     "x": 490.21276595744683,
-    "y": 328.75379939209728,
-    "z": 1022,
+    "y": 317.08206686930095,
+    "z": 26500,
     "height": 53.495440729483285,
     "width": 423.10030395136778,
-    "tabOrder": 1022
+    "tabOrder": 23000
   },
   "visual": {
     "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cômite Paralímpico Brasileiro"
+                    }
+                  },
+                  "Property": "Local de nascimento"
+                }
+              },
+              "queryRef": "Cômite Paralímpico Brasileiro.Local de nascimento",
+              "nativeQueryRef": "Local de nascimento"
+            }
+          ]
+        }
+      }
+    },
     "objects": {
       "categoryLabels": [
         {
@@ -196,5 +218,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e53f75db16a5418c62c2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cômite Paralímpico Brasileiro"
+              }
+            },
+            "Property": "Local de nascimento"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

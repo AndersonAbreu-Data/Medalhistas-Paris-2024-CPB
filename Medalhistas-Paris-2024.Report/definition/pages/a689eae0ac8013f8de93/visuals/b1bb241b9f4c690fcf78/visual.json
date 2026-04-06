@@ -4,10 +4,10 @@
   "position": {
     "x": 485.34954407294833,
     "y": 33.069908814589667,
-    "z": 1004,
+    "z": 5000,
     "height": 248.99696048632219,
     "width": 435.74468085106383,
-    "tabOrder": 1004
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -270,23 +270,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e63db2765506240be4c1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "Biografia do atleta"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

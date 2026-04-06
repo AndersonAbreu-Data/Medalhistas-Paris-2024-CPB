@@ -4,10 +4,10 @@
   "position": {
     "x": 217.87234042553192,
     "y": 141.03343465045594,
-    "z": 1024,
+    "z": 25000,
     "height": 79.756838905775084,
     "width": 187.72036474164133,
-    "tabOrder": 1024
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "slicer",
@@ -198,23 +198,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e2e737e2274c8e372854",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "modalidade"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

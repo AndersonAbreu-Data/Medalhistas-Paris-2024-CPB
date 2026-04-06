@@ -4,10 +4,10 @@
   "position": {
     "x": 490.21276595744683,
     "y": 369.6048632218845,
-    "z": 1023,
+    "z": 24000,
     "height": 313.19148936170217,
     "width": 423.10030395136778,
-    "tabOrder": 1023
+    "tabOrder": 24000
   },
   "visual": {
     "visualType": "azureMap",
@@ -310,7 +310,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "126a8387111bb6c08602",
+        "name": "ac8637f4fe6bb72cd137",
         "field": {
           "Column": {
             "Expression": {

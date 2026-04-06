@@ -35,7 +35,7 @@ Dominância Regional: O estado de São Paulo lidera o ranking de medalhas, segui
 Equilíbrio de Gênero: Análise visual da paridade de medalhas conquistadas por homens e mulheres em modalidades como Atletismo e Natação.
 
 📂 Como visualizar o projeto
-Baixe o arquivo .pbix deste repositório.
+Baixe o arquivo .pbip (deixei um .pbix também) deste repositório.
 
 Abra no Power BI Desktop.
 

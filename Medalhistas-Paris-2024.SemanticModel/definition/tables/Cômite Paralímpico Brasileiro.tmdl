@@ -177,6 +177,8 @@ table 'Cômite Paralímpico Brasileiro'
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Cômite Paralímpico Brasileiro","TableItemName":"idade (compartimentos)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
 	column peso
 		dataType: string
 		lineageTag: 7dac242d-c0e6-4a55-84df-72bd6e168dde
@@ -230,6 +232,43 @@ table 'Cômite Paralímpico Brasileiro'
 		lineageTag: 613e2e1e-7be7-44cc-8d6d-386db10e9c67
 		summarizeBy: none
 		sourceColumn: url_imagem
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'idade (compartimentos)' =
+			IF(
+				ISBLANK('Cômite Paralímpico Brasileiro'[idade]),
+				BLANK(),
+				INT('Cômite Paralímpico Brasileiro'[idade] / 5) * 5
+			)
+		formatString: 0
+		lineageTag: d12789a4-6004-4a6d-a2ff-823d3a24b66e
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Cômite Paralímpico Brasileiro"
+				          }
+				        },
+				        "Property": "idade"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 5.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"c","Entity":"Cômite Paralímpico Brasileiro"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"idade"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"idade"}},"Size":5.0}}}}
 
 		annotation SummarizationSetBy = Automatic
 

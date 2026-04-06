@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Medalhistas-Paris-2024"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b4740514-88fc-4351-8806-ca12a4a2e118"
+  }
+}

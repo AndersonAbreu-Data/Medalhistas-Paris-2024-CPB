@@ -4,10 +4,10 @@
   "position": {
     "x": 141.03343465045594,
     "y": 173.13069908814592,
-    "z": 2,
+    "z": 2000,
     "height": 62.249240121580549,
     "width": 264.55927051671733,
-    "tabOrder": 2
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -139,28 +139,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "434a4b0bfcd180ef98f1",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medalhas total"
-                  }
-                },
-                "Property": "Bronze Medal"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

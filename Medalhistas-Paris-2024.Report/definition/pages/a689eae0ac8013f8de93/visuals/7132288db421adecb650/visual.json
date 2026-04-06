@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "9ac0387d47b725361624",
+  "name": "7132288db421adecb650",
   "position": {
-    "x": 343.34346504559272,
-    "y": 247.05167173252281,
-    "z": 8000,
-    "height": 65.167173252279639,
-    "width": 66.139817629179333,
-    "tabOrder": 8000
+    "x": 0,
+    "y": 0,
+    "z": 1000,
+    "height": 129.36170212765958,
+    "width": 108.93617021276596,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'trofeu.png'"
+                      "Value": "'Logo_do_Comitê_Paralímpico_Brasileiro_(vertical)_02 (1).png'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "trofeu8409979163109773.png"
+                      "ItemName": "Logo_do_Comit__Paral_mpico_Bra36393226098695675.png"
                     }
                   }
                 },

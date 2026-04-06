@@ -11,6 +11,28 @@
   },
   "visual": {
     "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cômite Paralímpico Brasileiro"
+                    }
+                  },
+                  "Property": "Biografia do atleta"
+                }
+              },
+              "queryRef": "Cômite Paralímpico Brasileiro.Biografia do atleta",
+              "nativeQueryRef": "Biografia do atleta"
+            }
+          ]
+        }
+      }
+    },
     "objects": {
       "grid": [
         {
@@ -248,5 +270,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e63db2765506240be4c1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cômite Paralímpico Brasileiro"
+              }
+            },
+            "Property": "Biografia do atleta"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

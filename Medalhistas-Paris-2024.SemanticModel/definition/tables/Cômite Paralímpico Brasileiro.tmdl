@@ -1,6 +1,84 @@
 table 'Cômite Paralímpico Brasileiro'
 	lineageTag: ec3e9c9b-3fec-4cd0-a669-e209569b71a3
 
+	measure 'Altura do atleta' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[altura]),
+			    " "
+			)
+		lineageTag: 905704e5-0f5b-493e-8bff-1665359c4051
+
+	measure 'Biografia do atleta' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[biografia]),
+			    "Selecione um atleta"
+			)
+		lineageTag: 13d8e09b-f8f6-4eb3-a1f5-82abdf25e535
+
+	measure 'Classe atletas' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[classe]),
+			    " "
+			)
+		lineageTag: 5ff9ef96-132f-4fd8-8fe7-dd7edf5af4b3
+
+	measure 'Foto do Atleta' = ```
+			
+			IF(
+			    ISFILTERED('Cômite Paralímpico Brasileiro'[nome]), 
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[url_imagem]), 
+			    BLANK()
+			)
+			```
+		lineageTag: 7ebbf926-3a21-4f84-8edb-d7538cd20ead
+		dataCategory: ImageUrl
+
+	measure 'Idade atletas' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[Idade]),
+			    " "
+			)
+		lineageTag: 3c2ce2a3-359a-4d7c-855a-4150cd89acf5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Local de nascimento' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[local_nascimento]),
+			    " "
+			)
+		lineageTag: afd3792d-d5a3-4b6d-b779-02f0588e3474
+
+	measure 'Data de Nascimento Atletas' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[data_nascimento]),
+			    " "
+			)
+		lineageTag: c785ab7d-2faa-4a15-b4b6-2d2ad8680f3c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Peso do atleta' =
+			
+			IF(
+			    HASONEVALUE('Cômite Paralímpico Brasileiro'[nome]),
+			    SELECTEDVALUE('Cômite Paralímpico Brasileiro'[peso]),
+			    " "
+			)
+		lineageTag: f78cb77f-8dff-40ca-a49a-a0e52a8820ce
+
 	column code_athlete
 		dataType: int64
 		formatString: 0
@@ -115,14 +193,6 @@ table 'Cômite Paralímpico Brasileiro'
 
 		annotation SummarizationSetBy = Automatic
 
-	column principais_conquistas
-		dataType: string
-		lineageTag: 6ca6304d-b058-49bc-80af-1ea00c421923
-		summarizeBy: none
-		sourceColumn: principais_conquistas
-
-		annotation SummarizationSetBy = Automatic
-
 	column medalha_tipo
 		dataType: string
 		lineageTag: a0ba2464-6ea9-4b43-86c8-f653cda33220
@@ -146,9 +216,10 @@ table 'Cômite Paralímpico Brasileiro'
 				    Fonte = Excel.Workbook(File.Contents("C:\Users\ander\OneDrive\Área de Trabalho\ProjetoOli\AtletasCPB.xlsx"), null, true),
 				    #"Cômite Paralímpico Brasileiro_Sheet" = Fonte{[Item="Cômite Paralímpico Brasileiro",Kind="Sheet"]}[Data],
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Cômite Paralímpico Brasileiro_Sheet", [PromoteAllScalars=true]),
-				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"code_athlete", Int64.Type}, {"nome", type text}, {"sexo", type text}, {"classe", type any}, {"modalidade", type text}, {"tipo_modal", type text}, {"data_nascimento", type date}, {"idade", Int64.Type}, {"peso", type text}, {"altura", type text}, {"local_nascimento", type text}, {"estado", type text}, {"biografia", type text}, {"principais_conquistas", type text}, {"medalha_tipo", type text}, {"url_imagem", type text}})
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"code_athlete", Int64.Type}, {"nome", type text}, {"sexo", type text}, {"classe", type any}, {"modalidade", type text}, {"tipo_modal", type text}, {"data_nascimento", type date}, {"idade", Int64.Type}, {"peso", type text}, {"altura", type text}, {"local_nascimento", type text}, {"estado", type text}, {"biografia", type text}, {"principais_conquistas", type text}, {"medalha_tipo", type text}, {"url_imagem", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"principais_conquistas"})
 				in
-				    #"Tipo Alterado"
+				    #"Colunas Removidas"
 
 	annotation PBI_NavigationStepName = Navegação
 

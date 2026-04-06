@@ -11,6 +11,28 @@
   },
   "visual": {
     "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cômite Paralímpico Brasileiro"
+                    }
+                  },
+                  "Property": "Foto do Atleta"
+                }
+              },
+              "queryRef": "Cômite Paralímpico Brasileiro.Foto do Atleta",
+              "nativeQueryRef": "Foto do Atleta"
+            }
+          ]
+        }
+      }
+    },
     "objects": {
       "grid": [
         {
@@ -113,6 +135,22 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "255D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Cômite Paralímpico Brasileiro.Foto do Atleta"
           }
         }
       ]
@@ -234,5 +272,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3f866da389520c2a8e2b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cômite Paralímpico Brasileiro"
+              }
+            },
+            "Property": "Foto do Atleta"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -11,6 +11,29 @@
   },
   "visual": {
     "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cômite Paralímpico Brasileiro"
+                    }
+                  },
+                  "Property": "Classe atletas"
+                }
+              },
+              "queryRef": "Cômite Paralímpico Brasileiro.Classe atletas",
+              "nativeQueryRef": "Classe atletas",
+              "format": "G"
+            }
+          ]
+        }
+      }
+    },
     "objects": {
       "labels": [
         {
@@ -175,5 +198,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "893451e612825b71e1e6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cômite Paralímpico Brasileiro"
+              }
+            },
+            "Property": "Classe atletas"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

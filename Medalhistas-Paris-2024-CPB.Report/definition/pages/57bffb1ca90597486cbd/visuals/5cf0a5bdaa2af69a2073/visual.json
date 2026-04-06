@@ -752,7 +752,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Medalhas por esporte'"
+                  "Value": "'Medalhistas por esporte'"
                 }
               }
             }

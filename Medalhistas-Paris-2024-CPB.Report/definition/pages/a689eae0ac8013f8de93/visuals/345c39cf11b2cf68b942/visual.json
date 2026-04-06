@@ -198,23 +198,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dc54b198c6782d925dad",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "Classe atletas"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -7,7 +7,7 @@
     "z": 10000,
     "height": 88.510638297872347,
     "width": 139.08814589665653,
-    "tabOrder": 3007
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "slicer",
@@ -163,23 +163,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ec7bbae5f74e8ea4be87",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "sexo"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "58c459e8cc98e5ccb380",
+  "name": "44735e1416e0c8b0fb74",
   "position": {
-    "x": 498.96656534954411,
-    "y": 20.425531914893618,
-    "z": 2500,
-    "height": 288.87537993920972,
-    "width": 753.79939209726444,
-    "tabOrder": 5000
+    "x": 130.33434650455928,
+    "y": 461.03343465045594,
+    "z": 16000,
+    "height": 230.51671732522797,
+    "width": 266.50455927051672,
+    "tabOrder": 16000
   },
   "visual": {
-    "visualType": "hundredPercentStackedColumnChart",
+    "visualType": "pieChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,33 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Cômite Paralímpico Brasileiro"
+                      "Entity": "Medalhistas"
                     }
                   },
-                  "Property": "modalidade"
+                  "Property": "gender"
                 }
               },
-              "queryRef": "Cômite Paralímpico Brasileiro.modalidade",
-              "nativeQueryRef": "Contagem de modalidade",
+              "queryRef": "Medalhistas.gender",
+              "nativeQueryRef": "gender",
               "active": true
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Cômite Paralímpico Brasileiro"
-                    }
-                  },
-                  "Property": "sexo"
-                }
-              },
-              "queryRef": "Cômite Paralímpico Brasileiro.sexo",
-              "nativeQueryRef": "sexo"
             }
           ]
         },
@@ -54,22 +36,47 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
+                "Arithmetic": {
+                  "Left": {
+                    "Aggregation": {
                       "Expression": {
-                        "SourceRef": {
-                          "Entity": "Cômite Paralímpico Brasileiro"
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Medalhistas"
+                            }
+                          },
+                          "Property": "gender"
                         }
                       },
-                      "Property": "nome"
+                      "Function": 5
                     }
                   },
-                  "Function": 2
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Medalhistas"
+                                }
+                              },
+                              "Property": "gender"
+                            }
+                          },
+                          "Function": 5
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
                 }
               },
-              "queryRef": "Count(Cômite Paralímpico Brasileiro.nome)",
-              "nativeQueryRef": "Contagem de nome1"
+              "queryRef": "CountNonNull(Medalhistas.gender)",
+              "nativeQueryRef": "%GT Contagem de gender"
             }
           ]
         }
@@ -78,18 +85,43 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
+              "Arithmetic": {
+                "Left": {
+                  "Aggregation": {
                     "Expression": {
-                      "SourceRef": {
-                        "Entity": "Cômite Paralímpico Brasileiro"
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Medalhistas"
+                          }
+                        },
+                        "Property": "gender"
                       }
                     },
-                    "Property": "nome"
+                    "Function": 5
                   }
                 },
-                "Function": 2
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Aggregation": {
+                        "Expression": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Medalhistas"
+                              }
+                            },
+                            "Property": "gender"
+                          }
+                        },
+                        "Function": 5
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
               }
             },
             "direction": "Descending"
@@ -99,20 +131,34 @@
       }
     },
     "objects": {
-      "categoryAxis": [
+      "labels": [
         {
           "properties": {
-            "start": {
+            "position": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "'preferOutside'"
                 }
               }
             },
-            "end": {
+            "overflow": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "true"
+                }
+              }
+            },
+            "labelStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Percent of total'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -123,71 +169,10 @@
                 }
               }
             },
-            "showAxisTitle": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "gridlineShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "showGradientLegend": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'TopRight'"
-                }
-              }
-            },
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "13D"
                 }
               }
             }
@@ -284,43 +269,91 @@
               }
             ]
           }
-        }
-      ],
-      "labels": [
+        },
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "enableValueDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2942F7'"
+                    }
+                  }
                 }
               }
             }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Medalhistas"
+                          }
+                        },
+                        "Property": "gender"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Homem'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FA1616'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Medalhistas"
+                          }
+                        },
+                        "Property": "gender"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Mulher'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ],
-      "totals": [
+      "legend": [
         {
           "properties": {
             "show": {
@@ -330,21 +363,14 @@
                 }
               }
             },
-            "fontFamily": {
+            "position": {
               "expr": {
                 "Literal": {
-                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+                  "Value": "'TopRight'"
                 }
               }
             },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            },
-            "bold": {
+            "showTitle": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -383,7 +409,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Medalhas por modalidade e gênero'"
+                  "Value": "'Distribuição por gênero'"
                 }
               }
             }
@@ -449,30 +475,10 @@
           }
         }
       ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "visualTooltip": [
         {
           "properties": {
             "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showActionsInTooltips": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -485,6 +491,26 @@
                   "Value": "'Default'"
                 }
               }
+            },
+            "showActionsInTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -495,48 +521,79 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "19d6a5ce71d271588128",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "modalidade"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b67991414953c5007e64",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "sexo"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "163c2c80b9e70b5fa147",
+        "name": "18756c2237745ec796fb",
         "field": {
           "Aggregation": {
             "Expression": {
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Cômite Paralímpico Brasileiro"
+                    "Entity": "Medalhistas"
                   }
                 },
-                "Property": "nome"
+                "Property": "gender"
               }
             },
-            "Function": 2
+            "Function": 5
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "9f36a72af4ee69c68676",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medalhistas"
+              }
+            },
+            "Property": "gender"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "53ce9c858d06fb85783d",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Medalhistas"
+                      }
+                    },
+                    "Property": "gender"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Medalhistas"
+                          }
+                        },
+                        "Property": "gender"
+                      }
+                    },
+                    "Function": 5
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
           }
         },
         "type": "Advanced"

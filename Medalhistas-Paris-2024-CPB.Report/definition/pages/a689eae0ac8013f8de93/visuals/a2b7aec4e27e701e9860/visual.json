@@ -4,10 +4,10 @@
   "position": {
     "x": 146.86930091185411,
     "y": 436.71732522796356,
-    "z": 27001,
+    "z": 28000,
     "height": 246.07902735562311,
     "width": 311.24620060790272,
-    "tabOrder": 27001
+    "tabOrder": 28000
   },
   "visual": {
     "visualType": "donutChart",
@@ -385,37 +385,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4ed3cfce9332818202a5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "medalha_tipo"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e71c4d4e31279cf2da5c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "Total Medalhas"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

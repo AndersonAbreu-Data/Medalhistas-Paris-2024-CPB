@@ -4,7 +4,7 @@
   "position": {
     "x": 490.21276595744683,
     "y": 317.08206686930095,
-    "z": 26500,
+    "z": 26000,
     "height": 53.495440729483285,
     "width": 423.10030395136778,
     "tabOrder": 23000
@@ -218,23 +218,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e53f75db16a5418c62c2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "Local de nascimento"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

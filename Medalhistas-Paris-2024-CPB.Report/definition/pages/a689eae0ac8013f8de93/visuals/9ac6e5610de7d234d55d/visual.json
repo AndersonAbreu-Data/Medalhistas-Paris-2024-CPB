@@ -272,23 +272,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a2fd21ad5543a3206760",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
-              }
-            },
-            "Property": "Foto do Atleta"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

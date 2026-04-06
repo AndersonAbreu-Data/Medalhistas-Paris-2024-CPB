@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "9055c04972d5889104e4",
   "position": {
-    "x": 141.03343465045594,
-    "y": 408.51063829787233,
+    "x": 130.33434650455928,
+    "y": 385.16717325227967,
     "z": 10000,
     "height": 65.167173252279639,
     "width": 266.50455927051672,
@@ -63,47 +63,6 @@
                 "Literal": {
                   "Value": "true"
                 }
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "m",
-                    "Entity": "Medalhistas",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "m"
-                                }
-                              },
-                              "Property": "discipline"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Ciclismo de Pista Paralímpico'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
               }
             }
           }
@@ -277,7 +236,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "131b6ac18f1b304ba0fe",
+        "name": "64dd88db99030e3b8faa",
         "field": {
           "Column": {
             "Expression": {

@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "58c459e8cc98e5ccb380",
+  "name": "a2b7aec4e27e701e9860",
   "position": {
-    "x": 498.96656534954411,
-    "y": 20.425531914893618,
-    "z": 2500,
-    "height": 288.87537993920972,
-    "width": 753.79939209726444,
-    "tabOrder": 3002
+    "x": 146.86930091185411,
+    "y": 436.71732522796356,
+    "z": 27001,
+    "height": 246.07902735562311,
+    "width": 311.24620060790272,
+    "tabOrder": 27001
   },
   "visual": {
-    "visualType": "hundredPercentStackedColumnChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,30 +23,12 @@
                       "Entity": "Cômite Paralímpico Brasileiro"
                     }
                   },
-                  "Property": "modalidade"
+                  "Property": "medalha_tipo"
                 }
               },
-              "queryRef": "Cômite Paralímpico Brasileiro.modalidade",
-              "nativeQueryRef": "Contagem de modalidade",
+              "queryRef": "Cômite Paralímpico Brasileiro.medalha_tipo",
+              "nativeQueryRef": "medalha_tipo",
               "active": true
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Cômite Paralímpico Brasileiro"
-                    }
-                  },
-                  "Property": "sexo"
-                }
-              },
-              "queryRef": "Cômite Paralímpico Brasileiro.sexo",
-              "nativeQueryRef": "sexo"
             }
           ]
         },
@@ -54,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Cômite Paralímpico Brasileiro"
-                        }
-                      },
-                      "Property": "nome"
+                    "SourceRef": {
+                      "Entity": "Cômite Paralímpico Brasileiro"
                     }
                   },
-                  "Function": 2
+                  "Property": "Total Medalhas"
                 }
               },
-              "queryRef": "Count(Cômite Paralímpico Brasileiro.nome)",
-              "nativeQueryRef": "Contagem de nome1"
+              "queryRef": "Cômite Paralímpico Brasileiro.Total Medalhas",
+              "nativeQueryRef": "Total Medalhas"
             }
           ]
         }
@@ -78,18 +55,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Cômite Paralímpico Brasileiro"
-                      }
-                    },
-                    "Property": "nome"
+                  "SourceRef": {
+                    "Entity": "Cômite Paralímpico Brasileiro"
                   }
                 },
-                "Function": 2
+                "Property": "Total Medalhas"
               }
             },
             "direction": "Descending"
@@ -99,20 +71,20 @@
       }
     },
     "objects": {
-      "categoryAxis": [
+      "labels": [
         {
           "properties": {
-            "start": {
+            "position": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "'outside'"
                 }
               }
             },
-            "end": {
+            "overflow": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "true"
                 }
               }
             },
@@ -123,37 +95,10 @@
                 }
               }
             },
-            "showAxisTitle": {
+            "labelStyle": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "gridlineShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "'Percent of total'"
                 }
               }
             }
@@ -163,24 +108,10 @@
       "legend": [
         {
           "properties": {
-            "showGradientLegend": {
+            "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'TopRight'"
+                  "Value": "'Porcentual medalhas '"
                 }
               }
             },
@@ -188,145 +119,6 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#EB4242'"
-                    }
-                  }
-                }
-              }
-            },
-            "borderShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "Cômite Paralímpico Brasileiro"
-                          }
-                        },
-                        "Property": "sexo"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Mulher'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "Cômite Paralímpico Brasileiro"
-                          }
-                        },
-                        "Property": "sexo"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Homem'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "enableValueDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "totals": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             },
@@ -343,14 +135,135 @@
                   "Value": "12D"
                 }
               }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": -0.25
+                    }
+                  }
                 }
               }
             }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Cômite Paralímpico Brasileiro"
+                          }
+                        },
+                        "Property": "medalha_tipo"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Bronze'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Cômite Paralímpico Brasileiro"
+                          }
+                        },
+                        "Property": "medalha_tipo"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Ouro'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Cômite Paralímpico Brasileiro"
+                          }
+                        },
+                        "Property": "medalha_tipo"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Prata'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ]
@@ -359,6 +272,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Porcentual de medalhas por tipo'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -380,23 +300,24 @@
                 }
               }
             },
-            "text": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "'Medalhas por modalidade e gênero'"
+                  "Value": "13D"
                 }
               }
-            }
-          }
-        }
-      ],
-      "subTitle": [
-        {
-          "properties": {
-            "show": {
+            },
+            "bold": {
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -449,40 +370,13 @@
           }
         }
       ],
-      "visualHeader": [
+      "subTitle": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showActionsInTooltips": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "type": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Default'"
                 }
               }
             }
@@ -495,7 +389,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "78275f6662061f6b479d",
+        "name": "4ed3cfce9332818202a5",
         "field": {
           "Column": {
             "Expression": {
@@ -503,40 +397,21 @@
                 "Entity": "Cômite Paralímpico Brasileiro"
               }
             },
-            "Property": "modalidade"
+            "Property": "medalha_tipo"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "573e4dfba3e55b7d064b",
+        "name": "e71c4d4e31279cf2da5c",
         "field": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
                 "Entity": "Cômite Paralímpico Brasileiro"
               }
             },
-            "Property": "sexo"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "553043a1720fae895d49",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Cômite Paralímpico Brasileiro"
-                  }
-                },
-                "Property": "nome"
-              }
-            },
-            "Function": 2
+            "Property": "Total Medalhas"
           }
         },
         "type": "Advanced"

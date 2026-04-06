@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "89650dfbd3b5ba4f6e88",
+  "name": "ad6e146ca9d069754a13",
   "position": {
-    "x": 130.33434650455928,
-    "y": 20.425531914893618,
-    "z": 10000,
-    "height": 88.510638297872347,
-    "width": 139.08814589665653,
-    "tabOrder": 3007
+    "x": 146.86930091185411,
+    "y": 129.36170212765958,
+    "z": 27003,
+    "height": 79.756838905775084,
+    "width": 311.24620060790272,
+    "tabOrder": 27003
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,11 @@
                       "Entity": "Cômite Paralímpico Brasileiro"
                     }
                   },
-                  "Property": "sexo"
+                  "Property": "nome"
                 }
               },
-              "queryRef": "Cômite Paralímpico Brasileiro.sexo",
-              "nativeQueryRef": "sexo",
+              "queryRef": "Cômite Paralímpico Brasileiro.nome",
+              "nativeQueryRef": "nome",
               "active": true
             }
           ]
@@ -41,7 +41,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -50,7 +50,28 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "pendingChangesIcon": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
         }
       ],
       "header": [
@@ -59,14 +80,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Gênero'"
-                }
-              }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
+                  "Value": "'Nome'"
                 }
               }
             }
@@ -81,14 +95,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "heading": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Normal'"
+                  "Value": "false"
                 }
               }
             },
@@ -96,19 +103,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "subTitle": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -138,10 +132,30 @@
       "border": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "width": {
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -157,6 +171,27 @@
                   "Value": "true"
                 }
               }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom'"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -167,7 +202,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ec7bbae5f74e8ea4be87",
+        "name": "fd7bba92e34f8ad494ad",
         "field": {
           "Column": {
             "Expression": {
@@ -175,7 +210,7 @@
                 "Entity": "Cômite Paralímpico Brasileiro"
               }
             },
-            "Property": "sexo"
+            "Property": "nome"
           }
         },
         "type": "Categorical"

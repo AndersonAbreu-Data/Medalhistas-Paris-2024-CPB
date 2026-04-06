@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "7b70af0e42a4980edbb3",
   "position": {
-    "x": 217.87234042553192,
-    "y": 33.069908814589667,
+    "x": 146.86930091185411,
+    "y": 329.726443768997,
     "z": 26000,
     "height": 79.756838905775084,
-    "width": 187.72036474164133,
+    "width": 311.24620060790272,
     "tabOrder": 26000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "Cômite Paralímpico Brasileiro"
                     }
                   },
-                  "Property": "nome"
+                  "Property": "estado"
                 }
               },
-              "queryRef": "Cômite Paralímpico Brasileiro.nome",
-              "nativeQueryRef": "nome",
+              "queryRef": "Cômite Paralímpico Brasileiro.estado",
+              "nativeQueryRef": "estado",
               "active": true
             }
           ]
@@ -80,7 +80,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Nome'"
+                  "Value": "'Estado'"
                 }
               }
             }
@@ -202,7 +202,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "768863810470592fcd26",
+        "name": "729d62dc76b76e9e5519",
         "field": {
           "Column": {
             "Expression": {
@@ -210,7 +210,7 @@
                 "Entity": "Cômite Paralímpico Brasileiro"
               }
             },
-            "Property": "nome"
+            "Property": "estado"
           }
         },
         "type": "Categorical"

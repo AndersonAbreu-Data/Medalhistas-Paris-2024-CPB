@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "345c39cf11b2cf68b942",
+  "name": "278fddf5edd274e615e9",
   "position": {
-    "x": 979.452887537994,
-    "y": 465.89665653495445,
-    "z": 15000,
-    "height": 56.413373860182375,
-    "width": 253.86018237082067,
-    "tabOrder": 15000
+    "x": 146.86930091185411,
+    "y": 33.069908814589667,
+    "z": 27002,
+    "height": 63.221884498480243,
+    "width": 311.24620060790272,
+    "tabOrder": 27002
   },
   "visual": {
     "visualType": "card",
@@ -17,44 +17,51 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Cômite Paralímpico Brasileiro"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Cômite Paralímpico Brasileiro"
+                        }
+                      },
+                      "Property": "nome"
                     }
                   },
-                  "Property": "Classe atletas"
+                  "Function": 2
                 }
               },
-              "queryRef": "Cômite Paralímpico Brasileiro.Classe atletas",
-              "nativeQueryRef": "Classe atletas",
-              "format": "G"
+              "queryRef": "Min(Cômite Paralímpico Brasileiro.nome)",
+              "nativeQueryRef": "Contagem de nome"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Cômite Paralímpico Brasileiro"
+                      }
+                    },
+                    "Property": "nome"
+                  }
+                },
+                "Function": 2
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
-      "labels": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "18D"
-                }
-              }
-            },
-            "preserveWhitespace": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
       "categoryLabels": [
         {
           "properties": {
@@ -68,13 +75,13 @@
           }
         }
       ],
-      "wordWrap": [
+      "labels": [
         {
           "properties": {
-            "show": {
+            "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -86,13 +93,6 @@
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Classe'"
-                }
-              }
-            },
             "show": {
               "expr": {
                 "Literal": {
@@ -100,24 +100,45 @@
                 }
               }
             },
-            "titleWrap": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'Medalhistas brasileiros'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Normal'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "13D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
           }
         }
       ],
-      "background": [
+      "subTitle": [
         {
           "properties": {
             "show": {
@@ -127,30 +148,10 @@
                 }
               }
             },
-            "transparency": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "100D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
+                  "Value": "''"
                 }
               }
             }
@@ -163,33 +164,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "lockAspect": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -202,15 +177,20 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "dc54b198c6782d925dad",
+        "name": "f929bedc8735eced8a61",
         "field": {
-          "Measure": {
+          "Aggregation": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "Cômite Paralímpico Brasileiro"
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Cômite Paralímpico Brasileiro"
+                  }
+                },
+                "Property": "nome"
               }
             },
-            "Property": "Classe atletas"
+            "Function": 2
           }
         },
         "type": "Advanced"

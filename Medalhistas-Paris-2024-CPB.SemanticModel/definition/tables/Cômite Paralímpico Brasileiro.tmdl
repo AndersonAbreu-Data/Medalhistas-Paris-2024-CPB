@@ -103,6 +103,12 @@ table 'Cômite Paralímpico Brasileiro'
 		formatString: 0
 		lineageTag: bf12f96c-48a7-4c04-87ff-da0b2c232209
 
+	measure 'Total Medalhas' =
+			
+			COUNT('Cômite Paralímpico Brasileiro'[medalha_tipo])
+		formatString: 0
+		lineageTag: 05380640-5390-422c-9fbd-5422a9e1bcb1
+
 	column code_athlete
 		dataType: int64
 		formatString: 0

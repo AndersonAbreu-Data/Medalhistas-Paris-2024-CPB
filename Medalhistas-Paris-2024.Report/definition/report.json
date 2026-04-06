@@ -37,6 +37,32 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Medalhistas_Brasileiros_nas_Pa05877341724388563.png",
+          "path": "Medalhistas_Brasileiros_nas_Pa05877341724388563.png",
+          "type": "Image"
+        },
+        {
+          "name": "CPBfundo30982746824543188.jpg",
+          "path": "CPBfundo30982746824543188.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "CPBfundo340771519727300587.jpg",
+          "path": "CPBfundo340771519727300587.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "CPBfundo38316606839731739.jpg",
+          "path": "CPBfundo38316606839731739.jpg",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {

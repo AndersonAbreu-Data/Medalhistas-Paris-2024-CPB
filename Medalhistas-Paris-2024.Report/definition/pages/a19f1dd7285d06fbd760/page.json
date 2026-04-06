@@ -14,14 +14,23 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "''"
+                    "Value": "'Medalhistas Brasileiros nas Paralimpíadas 2024.png'"
                   }
                 }
               },
               "url": {
                 "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Medalhistas_Brasileiros_nas_Pa05877341724388563.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
                   "Literal": {
-                    "Value": "''"
+                    "Value": "'Fill'"
                   }
                 }
               }

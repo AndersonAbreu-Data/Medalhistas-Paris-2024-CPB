@@ -6,6 +6,7 @@ O objetivo é transformar dados brutos em insights estratégicos sobre biometria
 Desenvolver um dashboard interativo no Power BI que permita ao usuário explorar o perfil dos atletas medalhistas e entender os fatores que contribuíram para o sucesso da delegação brasileira.
 
 🛠️ Tecnologias Utilizadas
+
 Microsoft Excel: Utilizado como a fonte de dados primária do projeto: estruturação de tabelas relacionais e tratamento de dados (ETL).
 
 Power BI: Construção dos visuais e dashboards interativos.
@@ -41,7 +42,9 @@ Abra no Power BI Desktop.
 
 
 🎲Fonte dos dados
+
 Kaggle:https://www.kaggle.com/datasets/piterfm/tokyo-2020-paralympics
+
 Site CPB: https://cpb.org.br/
 
 👤 Autor

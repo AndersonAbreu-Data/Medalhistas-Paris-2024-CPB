@@ -39,6 +39,11 @@ Baixe o arquivo .pbip (deixei um .pbix também) deste repositório.
 
 Abra no Power BI Desktop.
 
+
+🎲Fonte dos dados
+Kaggle:https://www.kaggle.com/datasets/piterfm/tokyo-2020-paralympics
+Site CPB: https://cpb.org.br/
+
 👤 Autor
 Anderson da Silva Abreu
 

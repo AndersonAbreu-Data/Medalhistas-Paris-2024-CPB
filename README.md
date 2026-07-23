@@ -43,7 +43,7 @@ Abra no Power BI Desktop.
 
 🎲Fonte dos dados
 
-Kaggle:https://www.kaggle.com/datasets/piterfm/tokyo-2020-paralympics
+Kaggle: https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games
 
 Site CPB: https://cpb.org.br/
 
